@@ -1,0 +1,73 @@
+<%= form_for(@dashboard) do |f| %>
+  <% if @dashboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dashboard.errors.count, "error") %> prohibited this dashboard from being saved:</h2>
+
+      <ul>
+      <% @dashboard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uid %><br>
+    <%= f.text_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :provider %><br>
+    <%= f.text_field :provider %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_area :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_area :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :urls %><br>
+    <%= f.text_area :urls %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_area :image %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_area :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_area :email %>
+  </div>
+  <div class="field">
+    <%= f.label :token %><br>
+    <%= f.text_area :token %>
+  </div>
+  <div class="field">
+    <%= f.label :secret %><br>
+    <%= f.text_area :secret %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

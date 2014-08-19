@@ -1,0 +1,209 @@
+  [1m[36m (13.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (3.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDashboards (20140819003958)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (9.7ms)[0m  [1mCREATE TABLE "dashboards" ("id" serial primary key, "uid" character varying(255), "provider" character varying(255), "user_id" integer, "name" text, "first_name" text, "last_name" text, "location" text, "description" text, "urls" text, "image" text, "phone" text, "email" text, "token" text, "secret" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140819003958"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:49:47 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/railties-4.1.5/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 23ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:49:48 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/railties-4.1.5/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:52:52 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/railties-4.1.5/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:52:54 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/railties-4.1.5/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:53:10 -0400
+
+ActionController::RoutingError (uninitialized constant DashboardController):
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.5) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  request_store (1.1.0) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/JS_MBA/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/JS_MBA/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/JS_MBA/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.2ms)
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:53:15 -0400
+Processing by DashboardsController#index as HTML
+  [1m[35mDashboard Load (2.2ms)[0m  SELECT "dashboards".* FROM "dashboards"
+  Rendered dashboards/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 598ms (Views: 593.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:55:14 -0400
+Processing by DashboardsController#index as HTML
+  [1m[36mDashboard Load (0.4ms)[0m  [1mSELECT "dashboards".* FROM "dashboards"[0m
+  Rendered dashboards/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:56:09 -0400
+Processing by DashboardsController#index as HTML
+  [1m[35mDashboard Load (0.4ms)[0m  SELECT "dashboards".* FROM "dashboards"
+  Rendered dashboards/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:56:33 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 20:56:39 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:02:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 78ms
+
+ActionView::Template::Error (couldn't find file 'underscore'
+  (in /Users/JS_MBA/Rails/social_map/app/assets/javascripts/application.js:17)):
+     7: 	<meta name="viewport" content="width=device-width, initial-scale=1">
+     8: 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+     9: 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    10: 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    11: 
+    12: 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    13: 	<script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2069311538396114739_70186099929040'
+
+
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/JS_MBA/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:02:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 4664ms (Views: 4648.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:04:05 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 110ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:04:24 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:07:32 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:07:55 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:08:33 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:08:59 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:09:15 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 21:10:01 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
