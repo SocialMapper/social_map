@@ -775,3 +775,336 @@ Started GET "/" for 127.0.0.1 at 2014-08-18 23:38:30 -0400
 Processing by DashboardsController#index as HTML
   Rendered dashboards/index.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 719ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:43:45 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 719ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:44:41 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 713ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:44:49 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 320ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:44:54 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 356ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:45:29 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1759ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:46:41 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 673ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:47:02 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 316ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:48:02 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 848ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:48:16 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 333ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:48:38 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 343ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:52:24 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 460ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:53:13 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 447ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:53:56 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 761ms (Views: 115.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:55:01 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 761ms (Views: 24.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:55:21 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 685ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:55:44 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 370ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:56:26 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 683ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:58:30 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 338ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:59:18 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 762ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-18 23:59:58 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 338ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:00:14 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 687ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:01:02 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 382ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:01:57 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 704ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:02:06 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 461ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:02:16 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 353ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:02:28 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 335ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:02:52 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 356ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:03:00 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 371ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:03:14 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 687ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:03:24 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 365ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:04:00 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 534ms (Views: 174.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:04:13 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 402ms (Views: 94.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:04:28 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 312ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:08:54 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 778ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:09:42 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 692ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:09:51 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 382ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:10:30 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 725ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:11:03 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 358ms
+
+ActionView::Template::Error (Invalid CSS after "@white:": expected pseudoclass or pseudoelement, was " #ffffff; "
+  (in /Users/JS_MBA/Rails/social_map/app/assets/stylesheets/bootstrap_overrides.css.scss:4)):
+     7: 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+     8: 	<meta name="viewport" content="width=device-width, initial-scale=1">
+     9: 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    10: 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    11: 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    12: 	
+    13: 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  app/assets/stylesheets/bootstrap_overrides.css.scss:4
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___3176846184008815846_70311169823820'
+
+
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:11:30 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 321ms
+
+ActionView::Template::Error (Invalid CSS after "	border-bottom:": expected pseudoclass or pseudoelement, was " 4px solid rgba..."
+  (in /Users/JS_MBA/Rails/social_map/app/assets/stylesheets/bootstrap_overrides.css.scss:7)):
+     7: 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+     8: 	<meta name="viewport" content="width=device-width, initial-scale=1">
+     9: 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    10: 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    11: 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    12: 	
+    13: 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  app/assets/stylesheets/bootstrap_overrides.css.scss:7
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___3176846184008815846_70311169823820'
+
+
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:12:32 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 675ms
+
+ActionView::Template::Error (Invalid CSS after "	border-bottom:": expected pseudoclass or pseudoelement, was " 4px solid rgba..."
+  (in /Users/JS_MBA/Rails/social_map/app/assets/stylesheets/bootstrap_overrides.css.scss:8)):
+     7: 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+     8: 	<meta name="viewport" content="width=device-width, initial-scale=1">
+     9: 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    10: 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    11: 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    12: 	
+    13: 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  app/assets/stylesheets/bootstrap_overrides.css.scss:8
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___3176846184008815846_70311169823820'
+
+
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/JS_MBA/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:12:44 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 909ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:12:53 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 399ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:13:49 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 588ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:14:57 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 366ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:17:01 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 357ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:21:04 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2196ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-19 00:21:18 -0400
+Processing by DashboardsController#index as HTML
+  Rendered dashboards/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1149ms (Views: 29.6ms | ActiveRecord: 0.0ms)
