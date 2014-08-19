@@ -1,2 +1,8 @@
 
 .env
+
+config/database.yml
+/tmp/*
+/tmp/cache/*
+
+log/development.log
