@@ -1,2 +1,39 @@
-<div id="geolocation"></div>
-    
+<div id="geolocation" ></div>    
+
+<script type="text/javascript">
+
+	var handler = Gmaps.build('Google');
+	handler.buildMap({ internal: {id: 'geolocation'} }, function(){
+	  if(navigator.geolocation)
+	    navigator.geolocation.getCurrentPosition(displayOnMap);
+	});
+
+	function displayOnMap(position){
+	  var marker = handler.addMarker({
+	    lat: position.coords.latitude,
+	    lng: position.coords.longitude
+	  });
+	  console.log(position.coords.latitude);
+	  handler.map.centerOn(marker);
+	  
+	};
+	    
+</script>
+
+
+
+		<table class="table table-condensed">
+		  <thead>
+		        <tr>
+		          <th>Real Name</th>
+		          <th>User Profile Picture</th>
+		          <th>Picture They Took</th>
+		          <th>Likes on Photo</th>
+		          <th>Username</th>
+		        </tr>
+		  </thead>
+	      <tbody>
+	      </tbody>
+
+		</table>
+

@@ -1,3 +1,4 @@
+require 'instagram'
 class DashboardsController < ApplicationController
   before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
 
@@ -5,6 +6,8 @@ class DashboardsController < ApplicationController
   # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
+    gon.instagram_search = Instagram.media_search("40.7769060","-73.9800650")
+
   end
 
   # GET /dashboards/1
@@ -20,6 +23,11 @@ class DashboardsController < ApplicationController
   # GET /dashboards/1/edit
   def edit
   end
+
+
+
+
+
 
   # POST /dashboards
   # POST /dashboards.json
