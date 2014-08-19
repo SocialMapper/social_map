@@ -6,8 +6,17 @@ class DashboardsController < ApplicationController
   # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
-    gon.instagram_search = Instagram.media_search("40.7769060","-73.9800650")
 
+    # distance is in meters max is 5000 (3.106856 miles)
+    gon.instagram_search = Instagram.media_search("40.7769060","-73.9800650", { :distance => 1000, :count => 10 })
+
+  end
+
+  def instagram_search
+    @hash = Instagram.media_search(params[:latitude],params[:longitude])
+    respond_to do |format|
+        format.json {render :json => @hash }
+    end
   end
 
   # GET /dashboards/1
