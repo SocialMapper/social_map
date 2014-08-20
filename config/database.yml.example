@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: social_map_dev
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: social_map_test
+  pool: 5
