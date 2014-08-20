@@ -2,44 +2,29 @@ require 'instagram'
 class DashboardsController < ApplicationController
   before_action :set_dashboard, only: [:show, :edit, :update, :destroy]
 
-  # GET /dashboards
-  # GET /dashboards.json
   def index
     @dashboards = Dashboard.all
-
     # distance is in meters max is 5000 (3.106856 miles)
     gon.instagram_search = Instagram.media_search("40.7769060","-73.9800650", { :distance => 1000, :count => 10 })
-
   end
 
   def instagram_search
-    @hash = Instagram.media_search(params[:latitude],params[:longitude])
+    @instagrams = Instagram.media_search(params[:latitude],params[:longitude])
     respond_to do |format|
-        format.json {render :json => @hash }
+      format.json {render :json => @instagrams }
     end
   end
 
-  # GET /dashboards/1
-  # GET /dashboards/1.json
   def show
   end
 
-  # GET /dashboards/new
   def new
     @dashboard = Dashboard.new
   end
 
-  # GET /dashboards/1/edit
   def edit
   end
 
-
-
-
-
-
-  # POST /dashboards
-  # POST /dashboards.json
   def create
     @dashboard = Dashboard.new(dashboard_params)
 
@@ -54,8 +39,6 @@ class DashboardsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /dashboards/1
-  # PATCH/PUT /dashboards/1.json
   def update
     respond_to do |format|
       if @dashboard.update(dashboard_params)
@@ -68,8 +51,6 @@ class DashboardsController < ApplicationController
     end
   end
 
-  # DELETE /dashboards/1
-  # DELETE /dashboards/1.json
   def destroy
     @dashboard.destroy
     respond_to do |format|
@@ -79,13 +60,12 @@ class DashboardsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_dashboard
-      @dashboard = Dashboard.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def dashboard_params
-      params.require(:dashboard).permit(:uid, :provider, :user_id, :name, :first_name, :last_name, :location, :description, :urls, :image, :phone, :email, :token, :secret)
-    end
+  def set_dashboard
+    @dashboard = Dashboard.find(params[:id])
+  end
+
+  def dashboard_params
+    params.require(:dashboard).permit(:uid, :provider, :user_id, :name, :first_name, :last_name, :location, :description, :urls, :image, :phone, :email, :token, :secret)
+  end
 end
