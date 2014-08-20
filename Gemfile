@@ -20,6 +20,6 @@ gem 'underscore-rails'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
-	gem 'dotenv-rails'
-	gem 'spring'
+gem 'dotenv-rails'
+gem 'spring'
 end
