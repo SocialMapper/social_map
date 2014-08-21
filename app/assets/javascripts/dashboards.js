@@ -39,14 +39,29 @@ $( document ).ready(function() {
     $('.table').append(html);
   });
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      map.setCenter(initialLocation);
-    });
+
+  initialLocation = function () {
+    return new google.maps.LatLng(40.893126099999996, -73.1229106);
+    //if (navigator.geolocation) {
+        //navigator.geolocation.getCurrentPosition(function (position) {
+        //return new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      //});
+    //} else {
+      //return new google.maps.LatLng(40.893126099999996, -73.1229106);
+    //}
   }
 
-  var map = new google.maps.Map(document.getElementById("map-canvas"), {zoom: 10});
+  var mapOptions = {
+    center: initialLocation(),
+    zoom: 8
+  };
+
+  var mapOptions = {
+    center: initialLocation(),
+    zoom: 8
+  };
+
+  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 });
 
