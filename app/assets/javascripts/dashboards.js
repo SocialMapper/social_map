@@ -43,18 +43,14 @@ $( document ).ready(function() {
   initialLocation = function () {
     return new google.maps.LatLng(40.893126099999996, -73.1229106);
     //if (navigator.geolocation) {
-        //navigator.geolocation.getCurrentPosition(function (position) {
-        //return new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      //navigator.geolocation.getCurrentPosition(function (position) {
+        //r = {lat: position.coords.latitude, lng: position.coords.longitude};
+        //return r;
       //});
     //} else {
       //return new google.maps.LatLng(40.893126099999996, -73.1229106);
     //}
   }
-
-  var mapOptions = {
-    center: initialLocation(),
-    zoom: 8
-  };
 
   var mapOptions = {
     center: initialLocation(),
