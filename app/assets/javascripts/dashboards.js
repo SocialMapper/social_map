@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 
   //var handler = Gmaps.build('Google');
 
@@ -55,26 +55,32 @@ $( document ).ready(function() {
     new google.maps.Marker({
       position: location,
       map: map,
-      title: item.caption.text
+      title: "blah"
     });
   });
 
-  //google.maps.event.addListener(map, 'click', function(event) {
-    //var lat = event.latLng.lat();
-    //var lng = event.latLng.lng();
-    //$.ajax({
-      //type: "POST",
-      //url: "dashboards/instagram_search",
-      //data: ({latitude: lat, longitude: lng}),
-      //dataType: "json",
-      //success: function (data) {
-        //setCenter(event.latLng)
-        //$.each(data, function(i, item) {
-          //console.log(item.location.latitude + " " + item.location.longitude + " " + item.user.username);
-        //});
-      //}
-    //});
-  //});
+  google.maps.event.addListener(map, 'click', function(event) {
+    var lat = event.latLng.lat();
+    var lng = event.latLng.lng();
+    $.ajax({
+      type: "POST",
+      url: "dashboards/instagram_search",
+      data: ({latitude: lat, longitude: lng}),
+      dataType: "json",
+      success: function (data) {
+        map.setCenter(event.latLng)
+        $.each(data, function(i, item) {
+          console.log(item);
+          var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
+          new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "blah"
+          });
+        });
+      }
+    });
+  });
 
 });
 
