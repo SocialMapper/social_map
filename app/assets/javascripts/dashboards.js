@@ -31,33 +31,50 @@ $( document ).ready(function() {
         //}
       //});
     //});
+
   //}; // end displayOnMap()
 
-  $.each(gon.instagram_search, function(i, item) {
-    console.log(item);
-    var html = "<tr><td>" + item.user.full_name + "</td><td>" + "<img src=\"" + item.user.profile_picture + "\"/>" + "</td><td>" + "<img src=\"" + item.images.thumbnail.url + "\"/>" + "</td>" + "<td>" + item.likes.count + "</td><td>" + item.user.username + "</td></tr>";
-    $('.table').append(html);
-  });
-
-
-  initialLocation = function () {
-    return new google.maps.LatLng(40.893126099999996, -73.1229106);
-    //if (navigator.geolocation) {
-      //navigator.geolocation.getCurrentPosition(function (position) {
-        //r = {lat: position.coords.latitude, lng: position.coords.longitude};
-        //return r;
-      //});
-    //} else {
-      //return new google.maps.LatLng(40.893126099999996, -73.1229106);
-    //}
-  }
-
   var mapOptions = {
-    center: initialLocation(),
-    zoom: 8
+    zoom: 11
   };
 
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      map.setCenter(initialLocation);
+    });
+  } else {
+    var australia = new google.maps.LatLng(-34.397, 150.644);
+    map.setCenter(australia);
+  };
+
+  $.each(gon.instagram_search, function(i, item) {
+    var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
+    new google.maps.Marker({
+      position: location,
+      map: map,
+      title: item.caption.text
+    });
+  });
+
+  //google.maps.event.addListener(map, 'click', function(event) {
+    //var lat = event.latLng.lat();
+    //var lng = event.latLng.lng();
+    //$.ajax({
+      //type: "POST",
+      //url: "dashboards/instagram_search",
+      //data: ({latitude: lat, longitude: lng}),
+      //dataType: "json",
+      //success: function (data) {
+        //setCenter(event.latLng)
+        //$.each(data, function(i, item) {
+          //console.log(item.location.latitude + " " + item.location.longitude + " " + item.user.username);
+        //});
+      //}
+    //});
+  //});
 
 });
 
