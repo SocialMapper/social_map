@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   var mapOptions = {
-    zoom: 11
+    zoom: 18
   };
 
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -36,8 +36,20 @@ $(document).ready(function() {
       success: function (data) {
         map.setCenter(event.latLng)
         $.each(data, function(i, item) {
+          var contentString = '<div class="row">'+
+              '<div class="col-md-6">'+
+                "<img src=" + item.images.low_resolution.url + ">" +
+                '<p>' + item.caption.text + '</p>' +
+              '</div>'+
+              '<div class="col-md-6">'+
+
+              '</div>'+
+            '</div>';
+
+
           var infowindow = new google.maps.InfoWindow({
-            content: "<img src=" + item.images.low_resolution.url + ">"
+
+            content: contentString
           });
           console.log(item);
           var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
