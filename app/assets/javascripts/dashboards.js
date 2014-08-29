@@ -34,7 +34,8 @@ $(document).ready(function() {
       data: ({latitude: lat, longitude: lng}),
       dataType: "json",
       success: function (data) {
-        map.setCenter(event.latLng)
+        map.setCenter(event.latLng);
+        map.setZoom(13);
         $.each(data, function(i, item) {
           var infowindow = new google.maps.InfoWindow({
             content: "<img src=" + item.images.low_resolution.url + ">"
