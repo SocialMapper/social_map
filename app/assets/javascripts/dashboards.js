@@ -8,8 +8,8 @@ $(document).ready(function() {
 
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      map.setCenter(initialLocation);
+      var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      getPictures(latLng);
     });
   } else {
     var australia = new google.maps.LatLng(-34.397, 150.644);
@@ -17,7 +17,7 @@ $(document).ready(function() {
   };
 
   google.maps.event.addListener(map, 'click', function(event) {
-    getPictures(event);
+    getPictures(event.latLng);
   });
 
   function dropPins (latLng, data) {
@@ -39,14 +39,14 @@ $(document).ready(function() {
     });
   }
 
-  function getPictures (event) {
+  function getPictures (latLng) {
     $.ajax({
       type: "POST",
       url: "dashboards/instagram_search",
-      data: instagramFormattedLatLng(event.latLng),
+      data: instagramFormattedLatLng(latLng),
       dataType: "json",
       success: function (data) {
-        dropPins(event.latLng, data);
+        dropPins(latLng, data);
       }
     });
   }
