@@ -16,15 +16,6 @@ $(document).ready(function() {
     map.setCenter(australia);
   };
 
-  $.each(gon.instagram_search, function(i, item) {
-    var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
-    new google.maps.Marker({
-      position: location,
-      map: map,
-      title: "blah"
-    });
-  });
-
   google.maps.event.addListener(map, 'click', function(event) {
     var lat = event.latLng.lat();
     var lng = event.latLng.lng();
