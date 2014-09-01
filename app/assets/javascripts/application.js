@@ -16,3 +16,4 @@
 //= require underscore
 //= require modernizr
 //= require dashboards
+//= require_tree ../../../vendor/assets/fancybox/.

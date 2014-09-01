@@ -1,7 +1,7 @@
 $(document).ready(function() {
   google.maps.event.addDomListener(window, 'load', function() {
     var mapOptions = {
-      zoom: 11
+      zoom: 15
     };
 
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -38,11 +38,10 @@ $(document).ready(function() {
       return {latitude: latLng.lat(), longitude: latLng.lng()}
     }
     // helpful to see how the response comes in when necessary
-    //console.log(gon.instagram_search);
+    // console.log(gon.instagram_search);
     function dropPins (latLng, data) {
       map.setCenter(latLng);
-      // Resets Zoom Everytime new pins were dropped
-      // map.setZoom(13);
+
       $.each(data, function(i, item) {
         var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
         var marker = createMarker(location);
@@ -52,17 +51,8 @@ $(document).ready(function() {
 
     function addMarkerListener (marker, item) {
       google.maps.event.addListener(marker, 'click', function() {
-        // slighty nicer way to pan picture to picture
         map.panTo(marker.getPosition());
-        // will add in fancybox here
-
-        if (infowindow) { infowindow.close() };
-        infowindow = new google.maps.InfoWindow({
-          content: "<img src=" + item.images.standard_resolution.url + ">",
-          //offsets info window -- will replace with modal box
-          pixelOffset: new google.maps.Size(-300, 400)
-        });
-        infowindow.open(map, marker);
+            $.fancybox({content:"<img src=" + item.images.standard_resolution.url + ">"});
       });
     }
 
@@ -70,11 +60,11 @@ $(document).ready(function() {
 
     function createMarker (latLng) {
       // just playing around with google provided icons
-      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+      // var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
       return new google.maps.Marker({
         position: latLng,
-        map: map,
-        icon: iconBase + 'schools_maps.png'
+        map: map
+        // icon: iconBase + 'schools_maps.png'
       });
     }
 
