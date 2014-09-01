@@ -52,7 +52,7 @@ $(document).ready(function() {
     function addMarkerListener (marker, item) {
       google.maps.event.addListener(marker, 'click', function() {
         map.panTo(marker.getPosition());
-            $.fancybox({content:"<img src=" + item.images.standard_resolution.url + ">"});
+        $.fancybox({content:"<img src=" + item.images.standard_resolution.url + ">", title: item.caption.text });
       });
     }
 
