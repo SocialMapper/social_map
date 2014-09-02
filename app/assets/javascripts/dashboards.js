@@ -6,8 +6,6 @@ $(document).ready(function() {
 
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-    var infowindow;
-
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -37,8 +35,7 @@ $(document).ready(function() {
     function instagramFormattedLatLng (latLng) {
       return {latitude: latLng.lat(), longitude: latLng.lng()}
     }
-    // helpful to see how the response comes in when necessary
-    // console.log(gon.instagram_search);
+
     function dropPins (latLng, data) {
       map.setCenter(latLng);
 
@@ -52,14 +49,27 @@ $(document).ready(function() {
     function addMarkerListener (marker, item) {
       google.maps.event.addListener(marker, 'click', function() {
         map.panTo(marker.getPosition());
-        $.fancybox({content:'<div class="col-md-6">' +
-          '<img class="img-responsive"  src=' + item.images.standard_resolution.url + '>' +
-          '</div>' + '<div class="col-md-6">' + item.caption.text + '</div>',
-          title: item.caption.text });
+        $.fancybox({
+          content: fancyboxContent(item),
+          title: captionText(item)
+        });
       });
     }
 
+    function fancyboxContent (instagramItem) {
+      return ['<div class="col-md-6">',
+       '<img class="img-responsive"  src=',
+       instagramItem.images.standard_resolution.url,
+       '>',
+      '</div>',
+      '<div class="col-md-6">',
+      captionText(instagramItem),
+      '</div>'].join("\n")
+    }
 
+    function captionText (instagramItem) {
+      return instagramItem.caption ? instagramItem.caption.text : ""
+    }
 
     function createMarker (latLng) {
       // just playing around with google provided icons
