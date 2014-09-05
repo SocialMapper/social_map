@@ -1,7 +1,7 @@
 $(document).ready(function() {
   google.maps.event.addDomListener(window, 'load', function() {
     var mapOptions = {
-      zoom: 15
+      zoom: 13
     };
 
     var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
