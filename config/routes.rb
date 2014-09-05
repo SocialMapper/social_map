@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   resources :dashboards
+  root 'dashboards#index'
+  post "dashboards/instagram_search"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'dashboards#index'
-  post "dashboards/instagram_search"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
