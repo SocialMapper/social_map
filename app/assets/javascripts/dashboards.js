@@ -20,6 +20,25 @@ $(document).ready(function() {
       getPictures(event.latLng);
     });
 
+    function getComments (instagramId) {
+      $.ajax({
+        type: "POST",
+        url: "dashboards/instagram_comments",
+        data: {instagram_id: instagramId},
+        dataType: "json",
+        success: function (data) {
+          addCommentsToFancybox(data);
+        }
+      });
+    }
+
+    function addCommentsToFancybox (comments) {
+      var div = $(".comments");
+      $.each(comments, function (i, comment) {
+        div.append("<p>" + comment.text + "</p>");
+      });
+    }
+
     function getPictures (latLng) {
       $.ajax({
         type: "POST",
@@ -53,6 +72,7 @@ $(document).ready(function() {
           content: fancyboxContent(item),
           title: captionText(item)
         });
+        getComments(item.id);
       });
     }
 
@@ -62,7 +82,7 @@ $(document).ready(function() {
        instagramItem.images.standard_resolution.url,
        '>',
       '</div>',
-      '<div class="col-md-6">',
+      '<div class="col-md-6 comments">',
       captionText(instagramItem),
       '</div>'].join("\n")
     }
@@ -83,4 +103,3 @@ $(document).ready(function() {
 
   });
 });
-

@@ -8,4 +8,11 @@ class DashboardsController < ApplicationController
       format.json {render :json => @instagrams }
     end
   end
+
+  def instagram_comments
+    @comments = Instagram.media_comments(params[:instagram_id])
+    respond_to do |format|
+      format.json {render :json => @comments }
+    end
+  end
 end

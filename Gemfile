@@ -14,6 +14,7 @@ gem 'quiet_assets'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'underscore-rails'
+gem 'thin'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
