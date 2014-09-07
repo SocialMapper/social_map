@@ -84,6 +84,7 @@ $(document).ready(function() {
       '</div>',
       '<div class="col-md-6 comments">',
       captionText(instagramItem),
+      '<p>Comments</p>',
       '</div>'].join("\n")
     }
 
