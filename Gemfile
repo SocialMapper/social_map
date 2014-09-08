@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.5'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'emoji'
 gem 'coffee-rails', '~> 4.0.0'
