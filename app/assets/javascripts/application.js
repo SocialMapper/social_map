@@ -16,4 +16,7 @@
 //= require underscore
 //= require modernizr
 //= require dashboards
-//= require_tree ../../../vendor/assets/javascripts
+//= require jquery.fancybox-buttons
+//= require jquery.fancybox-media
+//= require jquery.fancybox-thumbs
+//= require jquery.fancybox.pack
