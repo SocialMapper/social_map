@@ -10,3 +10,31 @@ width:100vw;
 height:50vh;
 position:relative;
 }
+
+
+@-webkit-keyframes swing {
+  0% { -webkit-transform: rotateX(20deg); }
+  30% { -webkit-transform: rotateX(-15deg); }
+  50% { -webkit-transform: rotateX(10deg); }
+  70% { -webkit-transform: rotateX(-5deg); }
+  90% { -webkit-transform: rotateX(0deg); }
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  }
+}
+
+
+.pic1 {
+  width: 300px;
+  height: 300px;
+  display:inline-block;
+  margin:10px;
+  -webkit-animation: slideshow 20s infinite 2s, swing 2s ease-in-out;
+  -webkit-transform-origin-y:  0;
+  background: url(http://scontent-b-lga.cdninstagram.com/hphotos-xfa1/t51.2885-15/10251346_1468419866725622_1178012188_a.jpg);
+}
+

@@ -60,7 +60,8 @@ $(document).ready(function() {
 
       $.each(data, function(i, item) {
         var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
-        var marker = createMarker(location);
+        var thumbnail = item.images.thumbnail.url
+        var marker = createMarker(location, thumbnail);
         addMarkerListener(marker, item);
       });
     }
@@ -93,13 +94,17 @@ $(document).ready(function() {
       return instagramItem.caption ? instagramItem.caption.text : ""
     }
 
-    function createMarker (latLng) {
-      // just playing around with google provided icons
-      // var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
+    function createMarker (latLng, thumbnail) {
+      var images = {
+        url: thumbnail,
+        scaledSize: new google.maps.Size(50, 50)
+      };
       return new google.maps.Marker({
         position: latLng,
-        map: map
-        // icon: iconBase + 'schools_maps.png'
+        map: map,
+        icon: images,
+        animation: google.maps.Animation.DROP
       });
     }
 
