@@ -46,32 +46,8 @@ $(document).ready(function() {
 
     google.maps.event.addListener(searchBox, 'places_changed', function() {
       var places = searchBox.getPlaces();
-
-      if (places.length == 0) {
-        return;
-      }
-      for (var i = 0, marker; marker = markers[i]; i++) {
-        marker.setMap(null);
-      }
-
-      markers = [];
-      var bounds = new google.maps.LatLngBounds();
-      for (var i = 0, place; place = places[i]; i++) {
-        var image = {
-          url: place.icon,
-          size: new google.maps.Size(0, 0)
-        };
-        var marker = new google.maps.Marker({
-          map: map,
-          icon: image,
-          position: place.geometry.location
-        });
-        markers.push(marker);
-        bounds.extend(place.geometry.location);
-      }
-      map.fitBounds(bounds);
-      map.setZoom(13);
-      getPictures(marker.position);
+      var place = places[0];
+      getPictures(place.geometry.location);
     });
 
     function getComments (instagramId) {
