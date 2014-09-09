@@ -27,12 +27,22 @@ $(document).ready(function() {
     googleMap.clickListener();
     googleMap.setInitialLocation();
 
+    var googleSearch = {
+      input: (document.getElementById('pac-input')),
+      controls: function () {
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+      },
+      searchBox: function () {
+        return new google.maps.places.SearchBox((this.input));
+      }
+    }
+
+    var input = googleSearch.input;
+    googleSearch.controls();
+    var searchBox = googleSearch.searchBox();
+
+
     var markers = [];
-
-    var input = (document.getElementById('pac-input'));
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-    var searchBox = new google.maps.places.SearchBox((input));
 
     google.maps.event.addListener(searchBox, 'places_changed', function() {
       var places = searchBox.getPlaces();
@@ -63,7 +73,6 @@ $(document).ready(function() {
       map.setZoom(13);
       getPictures(marker.position);
     });
-
 
     function getComments (instagramId) {
       $.ajax({
