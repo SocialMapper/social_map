@@ -3,7 +3,7 @@ class DashboardsController < ApplicationController
   end
 
   def instagram_search
-    @instagrams = Instagram.media_search(params[:latitude],params[:longitude], { distance: 2500 })
+    @instagrams = Instagram.media_search(params[:latitude],params[:longitude], { distance: 500 })
     respond_to do |format|
       format.json {render :json => @instagrams }
     end
