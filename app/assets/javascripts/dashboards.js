@@ -1,61 +1,54 @@
 $(document).ready(function() {
   google.maps.event.addDomListener(window, 'load', function() {
-    var mapOptions = {
-      zoom: 13
-    };
+    var googleMap = {
+      options: {zoom: 13},
+      map: function () {
+        return new google.maps.Map(document.getElementById("map-canvas"), this.options);
+      },
+      clickListener: function () {
+        google.maps.event.addListener(map, 'click', function(event) {
+          getPictures(event.latLng);
+        });
+      },
+      setInitialLocation: function () {
+        if(navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            getPictures(latLng);
+          });
+        } else {
+          var australia = new google.maps.LatLng(-34.397, 150.644);
+          map.setCenter(australia);
+        };
+      }
+    }
+
+    var map = googleMap.map();
+    googleMap.clickListener();
+    googleMap.setInitialLocation();
+
+    var googleSearch = {
+      input: (document.getElementById('pac-input')),
+      controls: function () {
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+      },
+      searchBox: function () {
+        return new google.maps.places.SearchBox((this.input));
+      }
+    }
+
+    var input = googleSearch.input;
+    googleSearch.controls();
+    var searchBox = googleSearch.searchBox();
+
+
     var markers = [];
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-    var input = (document.getElementById('pac-input'));
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-    var searchBox = new google.maps.places.SearchBox(
-    /** @type {HTMLInputElement} */(input));
     google.maps.event.addListener(searchBox, 'places_changed', function() {
       var places = searchBox.getPlaces();
-
-      if (places.length == 0) {
-        return;
-      }
-      for (var i = 0, marker; marker = markers[i]; i++) {
-        marker.setMap(null);
-      }
-
-      markers = [];
-      var bounds = new google.maps.LatLngBounds();
-      for (var i = 0, place; place = places[i]; i++) {
-        var image = {
-          url: place.icon,
-          size: new google.maps.Size(0, 0)
-        };
-        var marker = new google.maps.Marker({
-          map: map,
-          icon: image,
-          position: place.geometry.location
-        });
-        markers.push(marker);
-        bounds.extend(place.geometry.location);
-      }
-      map.fitBounds(bounds);
-      map.setZoom(13);
-      getPictures(marker.position);
+      var place = places[0];
+      getPictures(place.geometry.location);
     });
-
-    if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        getPictures(latLng);
-      });
-    } else {
-      var australia = new google.maps.LatLng(-34.397, 150.644);
-      map.setCenter(australia);
-    };
-
-    google.maps.event.addListener(map, 'click', function(event) {
-      getPictures(event.latLng);
-    });
-
-
 
     function getComments (instagramId) {
       $.ajax({
@@ -130,7 +123,6 @@ $(document).ready(function() {
     function captionText (instagramItem) {
       return instagramItem.caption ? instagramItem.caption.text : ""
     }
-
 
     function createMarker (latLng, thumbnail) {
       var images = {
