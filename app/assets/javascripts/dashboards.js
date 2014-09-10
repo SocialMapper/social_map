@@ -8,14 +8,14 @@ $(document).ready(function() {
     },
     clickListener: function () {
       google.maps.event.addListener(map, 'click', function(event) {
-        getPictures(event.latLng);
+        Instagram.getPictures(event.latLng);
       });
     },
     setInitialLocation: function () {
       if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
           var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-          getPictures(latLng);
+          Instagram.getPictures(latLng);
         });
       } else {
         var australia = new google.maps.LatLng(-34.397, 150.644);
@@ -26,42 +26,36 @@ $(document).ready(function() {
       google.maps.event.addListener(marker, 'click', function() {
         map.panTo(marker.getPosition());
         $.fancybox({
-          content: fancyboxContent(item),
-          title: captionText(item)
+          content: Fancybox.html(item),
+          title: Instagram.captionText(item)
         });
         Instagram.getComments(item.id);
       });
     }
   }
 
-  var map = googleMap.map();
+  map = googleMap.map();
   googleMap.clickListener();
   googleMap.setInitialLocation();
 
 
   // google maps search box
-  var googleSearch = {
-    input: (document.getElementById('pac-input')),
-    controls: function () {
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  googleSearch = {
+    input: function () {
+      return (document.getElementById('pac-input'));
     },
     searchBox: function () {
+      map.controls[google.maps.ControlPosition.TOP_LEFT].push(this.input);
       return new google.maps.places.SearchBox((this.input));
     },
     addListener: function () {
       google.maps.event.addListener(this.searchBox, 'places_changed', function() {
         var places = this.searchBox.getPlaces();
         var place = places[0];
-        getPictures(place.geometry.location);
+        Instagram.getPictures(place.geometry.location);
       });
     }
   }
-
-  var input = googleSearch.input;
-  googleSearch.controls();
-  var searchBox = googleSearch.searchBox();
-  googleSearch.addListener();
-
 
   // instagram related stuff
   var Instagram = {
@@ -72,74 +66,77 @@ $(document).ready(function() {
         data: {instagram_id: instagramId},
         dataType: "json",
         success: function (data) {
-          addCommentsToFancybox(data);
+          Fancybox.addComments(data);
         }
       });
+    },
+    getPictures: function (latLng) {
+      $.ajax({
+        type: "POST",
+        url: "dashboards/instagram_search",
+        data: this.instaLatLng(latLng),
+        dataType: "json",
+        success: function (data) {
+          socialMap.dropPins(latLng, data);
+        }
+      });
+    },
+    instaLatLng: function (googleLatLng) {
+      return {latitude: googleLatLng.lat(), longitude: googleLatLng.lng()}
+    },
+    captionText: function (instagramItem) {
+      return instagramItem.caption ? instagramItem.caption.text : "";
     }
   }
 
-  function addCommentsToFancybox (comments) {
-    var div = $(".comments");
-    $.each(comments, function (i, comment) {
-      div.append("<p>" + comment.text + "</p>");
-    });
+
+  // fancybox related stuff
+  var Fancybox = {
+    addComments: function (comments) {
+      var div = $(".comments");
+      $.each(comments, function (i, comment) {
+        div.append("<p>" + comment.text + "</p>");
+      });
+    },
+    html: function (instagramItem) {
+      return ['<div class="col-md-6">',
+       '<img class="img-responsive"  src=',
+       instagramItem.images.standard_resolution.url,
+       '>',
+      '</div>',
+      '<div class="col-md-6 comments">',
+      Instagram.captionText(instagramItem),
+      '<br>',
+      '<strong>Comments</strong>',
+      '</div>'].join("\n")
+    }
   }
 
-  function getPictures (latLng) {
-    $.ajax({
-      type: "POST",
-      url: "dashboards/instagram_search",
-      data: instagramFormattedLatLng(latLng),
-      dataType: "json",
-      success: function (data) {
-        dropPins(latLng, data);
-      }
-    });
-  }
+  // the secret sauce that makes social_map special
+  var socialMap = {
+    createMarker: function (latLng, thumbnail) {
+      var images = {
+        url: thumbnail,
+        scaledSize: new google.maps.Size(50, 50)
+      };
+      return new google.maps.Marker({
+        position: latLng,
+        map: map,
+        icon: images,
+        animation: google.maps.Animation.DROP
+      });
+    },
+    dropPins: function (latLng, data) {
+      map.panTo(latLng);
 
-  function instagramFormattedLatLng (latLng) {
-    return {latitude: latLng.lat(), longitude: latLng.lng()}
-  }
-
-  function dropPins (latLng, data) {
-    map.setCenter(latLng);
-
-    $.each(data, function(i, item) {
-      var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
-      var thumbnail = item.images.thumbnail.url
-      var marker = createMarker(location, thumbnail);
-      googleMap.addMarkerListener(marker, item);
-    });
-  }
-
-  function fancyboxContent (instagramItem) {
-    return ['<div class="col-md-6">',
-     '<img class="img-responsive"  src=',
-     instagramItem.images.standard_resolution.url,
-     '>',
-    '</div>',
-    '<div class="col-md-6 comments">',
-    captionText(instagramItem),
-    '<br>',
-    '<strong>Comments</strong>',
-    '</div>'].join("\n")
-  }
-
-  function captionText (instagramItem) {
-    return instagramItem.caption ? instagramItem.caption.text : ""
-  }
-
-  function createMarker (latLng, thumbnail) {
-    var images = {
-      url: thumbnail,
-      scaledSize: new google.maps.Size(50, 50)
-    };
-    return new google.maps.Marker({
-      position: latLng,
-      map: map,
-      icon: images,
-      animation: google.maps.Animation.DROP
-    });
+      var self = this;
+      $.each(data, function(i, item) {
+        var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
+        var thumbnail = item.images.thumbnail.url
+        var marker = self.createMarker(location, thumbnail);
+        googleMap.addMarkerListener(marker, item);
+      });
+    }
   }
 
 });
