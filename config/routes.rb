@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :dashboards
   root 'dashboards#index'
   post "dashboards/instagram_search"
-  post "dashboards/instagram_comments"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

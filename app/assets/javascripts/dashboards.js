@@ -29,7 +29,6 @@ $(document).ready(function() {
           content: Fancybox.html(item),
           title: Instagram.captionText(item)
         });
-        Instagram.getComments(item.id);
       });
     }
   }
@@ -57,20 +56,10 @@ $(document).ready(function() {
     }
   }
 
+  instagrams = [];
 
   // instagram related stuff
   var Instagram = {
-    getComments: function (instagramId) {
-      $.ajax({
-        type: "POST",
-        url: "dashboards/instagram_comments",
-        data: {instagram_id: instagramId},
-        dataType: "json",
-        success: function (data) {
-          Fancybox.addComments(data);
-        }
-      });
-    },
     getPictures: function (latLng) {
       $.ajax({
         type: "POST",
@@ -78,6 +67,7 @@ $(document).ready(function() {
         data: this.instaLatLng(latLng),
         dataType: "json",
         success: function (data) {
+          instagrams.push(data);
           socialMap.dropPins(latLng, data);
         }
       });
@@ -94,10 +84,11 @@ $(document).ready(function() {
   // fancybox related stuff
   var Fancybox = {
     addComments: function (comments) {
-      var div = $(".comments");
+      var result = "";
       $.each(comments, function (i, comment) {
-        div.append("<p>" + comment.text + "</p>");
+        result += ("<p>" + comment.text + "</p>");
       });
+      return result;
     },
     html: function (instagramItem) {
       return ['<div class="col-md-6">',
@@ -109,6 +100,7 @@ $(document).ready(function() {
       Instagram.captionText(instagramItem),
       '<br>',
       '<strong>Comments</strong>',
+      this.addComments(instagramItem.comments.data),
       '</div>'].join("\n")
     }
   }
