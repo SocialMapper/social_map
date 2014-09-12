@@ -56,8 +56,6 @@ $(document).ready(function() {
     }
   }
 
-  instagrams = [];
-
   // instagram related stuff
   var Instagram = {
     getPictures: function (latLng) {
@@ -67,7 +65,6 @@ $(document).ready(function() {
         data: this.instaLatLng(latLng),
         dataType: "json",
         success: function (data) {
-          instagrams.push(data);
           socialMap.dropPins(latLng, data);
         }
       });
@@ -86,7 +83,14 @@ $(document).ready(function() {
     addComments: function (comments) {
       var result = "";
       $.each(comments, function (i, comment) {
-        result += ("<p>" + comment.text + "</p>");
+        var html = [
+        "<p>",
+        '<img src=',
+        comment.from.profile_picture,
+        '>',
+        comment.text,
+        "</p>"].join("\n")
+        result += html;
       });
       return result;
     },
