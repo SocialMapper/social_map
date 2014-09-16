@@ -77,7 +77,6 @@ function init () {
       return {latitude: googleLatLng.lat(), longitude: googleLatLng.lng()}
     },
     captionText: function (instagramItem) {
-      console.log(instagramItem);
       return instagramItem.caption ? instagramItem.caption.text : "";
     }
   }
@@ -100,6 +99,7 @@ function init () {
       return result;
     },
     html: function (instagramItem) {
+      console.log(instagramItem)
       return ['<div class="col-md-6">',
        '<img class="img-responsive"  src=',
        instagramItem.images.standard_resolution.url,
