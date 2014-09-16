@@ -13,6 +13,8 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'underscore-rails'
 gem 'thin'
+gem 'gemoji', '~> 2.1.0'
+gem 'pry'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
