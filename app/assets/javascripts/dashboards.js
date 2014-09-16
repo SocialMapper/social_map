@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  google.maps.event.addDomListener(window, 'load', init);
+});
+
+function init () {
 
   // google maps stuff
   var googleMap = {
@@ -137,11 +141,11 @@ $(document).ready(function() {
     }
   }
 
-
   // run the code
   var map = googleMap.map();
   googleMap.addClickListener();
   googleMap.setInitialLocation();
   searchBox.run();
 
-});
+}
+
