@@ -77,6 +77,7 @@ function init () {
       return {latitude: googleLatLng.lat(), longitude: googleLatLng.lng()}
     },
     captionText: function (instagramItem) {
+      console.log(instagramItem);
       return instagramItem.caption ? instagramItem.caption.text : "";
     }
   }
