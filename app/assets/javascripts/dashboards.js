@@ -88,18 +88,19 @@ function init () {
       var result = "";
       $.each(comments, function (i, comment) {
         var html = [
-        "<p>",
-        '<img src=',
+        "<div class='col-md-12'>",
+        '<img class="col-md-4" src=',
         comment.from.profile_picture,
         '>',
+        '<p class="col-md-8">',
         comment.text,
-        "</p>"].join("\n")
+        '</p>',
+        "</div>"].join("\n")
         result += html;
       });
       return result;
     },
     html: function (instagramItem) {
-      console.log(instagramItem)
       return ['<div class="col-md-6">',
        '<img class="img-responsive"  src=',
        instagramItem.images.standard_resolution.url,
@@ -108,7 +109,6 @@ function init () {
       '<div class="col-md-6 comments">',
       Instagram.captionText(instagramItem),
       '<br>',
-      '<strong>Comments</strong>',
       this.addComments(instagramItem.comments.data),
       '</div>'].join("\n")
     }
