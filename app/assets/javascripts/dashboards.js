@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 
 function init () {
+  markers = [];
   map = googleMap.map();
   googleMap.setInitialLocation();
   searchBox.run();
@@ -28,8 +29,8 @@ googleMap = {
         Instagram.getPictures(latLng);
       },
       function () {
-        // some place in Australia
-        var latLng = new google.maps.LatLng(-34.397, 150.644);
+        // some place in Long Island
+        var latLng = new google.maps.LatLng(40.8, 73.3);
         Instagram.getPictures(latLng);
       },
       {timeout: 10000}
@@ -42,6 +43,24 @@ googleMap = {
         content: Fancybox.html(item),
         title: Instagram.captionText(item)
       });
+      recentMedia.addListener();
+    });
+  },
+  clearMarkers: function () {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+  }
+}
+
+
+recentMedia = {
+  addListener: function () {
+    $('.show-user-recent-media').click(function () {
+      $.fancybox.close();
+      var id = $(this).data("id");
+      Instagram.getUserRecentMedia(id);
+      map.setZoom(10);
     });
   }
 }
@@ -84,6 +103,20 @@ Instagram = {
   },
   captionText: function (instagramItem) {
     return instagramItem.caption ? instagramItem.caption.text : "";
+  },
+  getUserRecentMedia: function (id) {
+    $.ajax({
+      type: "POST",
+      url: "dashboards/user_recent_media",
+      data: {id: id},
+      dataType: "json",
+      success: function (data) {
+        googleMap.clearMarkers();
+        var location = data[0].location
+        var latLng = new google.maps.LatLng(location.latitude, location.longitude);
+        socialMap.dropPins(latLng, data);
+      }
+    });
   }
 }
 
@@ -108,6 +141,7 @@ socialMap = {
       var location = new google.maps.LatLng(item.location.latitude, item.location.longitude);
       var thumbnail = item.images.thumbnail.url
       var marker = self.createMarker(location, thumbnail);
+      markers.push(marker);
       googleMap.addMarkerListener(marker, item);
     });
   }

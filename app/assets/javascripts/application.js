@@ -19,5 +19,5 @@
 //= require jquery.fancybox-buttons
 //= require jquery.fancybox-media
 //= require jquery.fancybox-thumbs
-//= require example.js.coffee
+//= require fancybox.js.coffee
 //= require dashboards
