@@ -88,38 +88,6 @@ Instagram = {
 }
 
 
-Fancybox = {
-  addComments: function (comments) {
-    var result = "";
-    $.each(comments, function (i, comment) {
-      var html = [
-      "<div class='col-md-12'>",
-      '<img class="col-md-4" src=',
-      comment.from.profile_picture,
-      '>',
-      '<p class="col-md-8">',
-      comment.text,
-      '</p>',
-      "</div>"].join("\n")
-      result += html;
-    });
-    return result;
-  },
-  html: function (instagramItem) {
-    return ['<div class="col-md-6">',
-     '<img class="img-responsive"  src=',
-     instagramItem.images.standard_resolution.url,
-     '>',
-    '</div>',
-    '<div class="col-md-6 comments">',
-    Instagram.captionText(instagramItem),
-    '<br>',
-    this.addComments(instagramItem.comments.data),
-    '</div>'].join("\n")
-  }
-}
-
-
 socialMap = {
   createMarker: function (latLng, thumbnail) {
     var images = {
