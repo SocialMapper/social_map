@@ -40,8 +40,7 @@ googleMap = {
     google.maps.event.addListener(marker, 'click', function() {
       map.panTo(marker.getPosition());
       $.fancybox({
-        content: Fancybox.html(item),
-        title: Instagram.captionText(item)
+        content: Fancybox.html(item)
       });
       recentMedia.addListener();
     });

@@ -3,8 +3,8 @@ window.Fancybox =
     result = ""
     $.each comments, (i, comment) ->
       html = ""
-      html += "<div class='col-md-12'>"
-      html +=   "<img class=\"col-md-4\" src=#{comment.from.profile_picture}>"
+      html += "<div class='col-md-12 comment-row'>"
+      html +=   "<img class=\"col-md-4 commenter-image\" src=#{comment.from.profile_picture}>"
       html +=   "<p class=\"col-md-8\">@#{comment.from.username}: #{comment.text}</p>"
       html += "</div>"
       result += html

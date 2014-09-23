@@ -1,13 +1,48 @@
 
-
 /* Colors */
 
 $white: #ffffff;
-$border: #C2C2C2;
+$off-white: #f8f8f8;
+$border: #E0E0E0;
+$info: #3498db;
 
 
-.navbar {
-background: $white;
-opacity: .8;
-border-bottom: 4px solid $border;
+
+p {
+  font-family: "Open Sans", helvetica, sans-serif;
+
+
+
 }
+
+.fancybox-skin {
+  background: $white;
+}
+.show-user-recent-media {
+    font-weight: bold;
+    color: $info;
+    cursor: pointer;
+}
+
+.comments {
+  padding: 15px;
+  border-left: 1px solid $border;
+  height: 100%;
+}
+
+.commenter-image {
+  width: 20%;
+  border-radius:2px;
+  max-width: 125px;
+}
+
+.comment-row {
+  border-bottom: 1px solid $border;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.comment-row:nth-last-child(2) {
+  border-bottom: 0px;
+}
+
