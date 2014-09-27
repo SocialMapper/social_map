@@ -12,6 +12,7 @@ class DashboardsController < ApplicationController
 
   def user_recent_media
     @instagrams = Instagram.user_recent_media(params[:id])
+    emojify_instagrams
     respond_to do |format|
       format.json {render :json => @instagrams }
     end

@@ -15,6 +15,7 @@ gem 'underscore-rails'
 gem 'thin'
 gem 'gemoji', '~> 2.1.0'
 gem 'pry'
+gem 'twitter'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
