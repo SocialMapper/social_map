@@ -18,6 +18,14 @@ class DashboardsController < ApplicationController
     end
   end
 
+  def twitter_search
+    input="#{params[:latitude]},#{params[:longitude]},1mi"
+    @tweets = $twitter_client.search("", {geocode: input})
+    respond_to do |format|
+      format.json {render :json => @tweets }
+    end
+  end
+
   private
 
   def emojify_instagrams
