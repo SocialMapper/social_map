@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require underscore
 //= require modernizr
+//= require pace.min
 //= require jquery.fancybox.pack
 //= require jquery.fancybox-buttons
 //= require jquery.fancybox-media

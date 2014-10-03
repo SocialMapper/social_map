@@ -9,6 +9,8 @@ function init () {
   googleMap.setInitialLocation();
   searchBox.run();
   googleMap.addClickListener();
+
+
 }
 
 
@@ -81,6 +83,7 @@ searchBox = {
         Instagram.getPictures(place.geometry.location);
       }
     });
+
   }
 }
 
@@ -144,4 +147,5 @@ socialMap = {
       googleMap.addMarkerListener(marker, item);
     });
   }
+
 }
