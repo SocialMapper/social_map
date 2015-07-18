@@ -22,6 +22,7 @@ googleMap = {
   addClickListener: function () {
     google.maps.event.addListener(map, 'click', function(event) {
       Instagram.getPictures(event.latLng);
+      Twitter.getTweets(event.latLng);
     });
   },
   setInitialLocation: function () {
@@ -148,4 +149,33 @@ socialMap = {
     });
   }
 
+}
+
+Twitter = {
+  getTweets: function (latLng) {
+    $.ajax({
+      type: "POST",
+      url: "dashboards/twitter_search",
+      data: Instagram.instaLatLng(latLng),
+      dataType: "json",
+      success: function (data) {
+        _.each(data, function (tweet) {
+          if (tweet.coordinates != null) {
+            var infowindow = new google.maps.InfoWindow({
+              content: tweet.text
+            });
+
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(tweet.geo.coordinates[0], tweet.geo.coordinates[1]),
+              map: map,
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.open(map,marker);
+            });
+          }
+        });
+      }
+    });
+  }
 }

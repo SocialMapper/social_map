@@ -12,8 +12,17 @@ class DashboardsController < ApplicationController
 
   def user_recent_media
     @instagrams = Instagram.user_recent_media(params[:id])
+    emojify_instagrams
     respond_to do |format|
       format.json {render :json => @instagrams }
+    end
+  end
+
+  def twitter_search
+    input="#{params[:latitude]},#{params[:longitude]},1mi"
+    @tweets = $twitter_client.search("", {geocode: input})
+    respond_to do |format|
+      format.json {render :json => @tweets }
     end
   end
 
